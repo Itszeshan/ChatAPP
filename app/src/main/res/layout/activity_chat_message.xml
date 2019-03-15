@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activites.ChatMessageActivity"
+    android:background="#e5ddd5">
+
+    <include
+        android:id="@+id/toolbar_messages"
+        layout="@layout/basic_toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/messagesList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:padding="5dp"
+        app:reverseLayout="true"
+        app:stackFromEnd="true"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_messages"
+        app:layout_constraintBottom_toTopOf="@+id/media_recycler_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.015" />
+
+    <FrameLayout
+        android:id="@+id/progressBar_holder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:alpha="0.6"
+        android:visibility="invisible">
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:layout_gravity="center"
+            android:id="@+id/avi"
+            android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/AVLoadingIndicatorView.Large"
+        android:visibility="visible"
+        app:indicatorName="BallPulseIndicator"
+        app:indicatorColor="@color/colorPrimary"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sending Media"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            />
+
+    </FrameLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/media_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/send_message_panel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/send_message_panel"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:paddingTop="5dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="0dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+
+        <EditText
+            android:id="@+id/send_message_edit"
+            android:layout_width="0dp"
+            android:layout_weight="0.9"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_edit_text"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="6dp"
+            android:longClickable="false"
+            android:drawableEnd="@drawable/ic_attach_file_black_24dp"
+            android:hint="Enter your message"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            />
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/send_message_btn"
+            android:layout_width="0dp"
+            android:layout_weight="0.15"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:foreground="@drawable/ic_send_black_24dp"
+            android:foregroundGravity="center"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_gravity="end"
+
+            />
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

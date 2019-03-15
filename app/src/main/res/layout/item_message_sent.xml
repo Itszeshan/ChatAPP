@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginTop="5dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/outgoing_layout_bubble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="8dp"
+        android:layout_alignParentRight="true"
+        android:padding="15dp"
+        android:background="@drawable/bubble_in"
+        android:backgroundTint="#dcf8c6">
+        
+        <ImageView
+            android:id="@+id/media"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            android:maxHeight="150dp"
+            android:maxWidth="100dp"
+            android:src="@drawable/facebook_avatar"
+            android:visibility="gone"/>
+
+
+        <TextView
+            android:layout_below="@id/media"
+            android:id="@+id/textview_message"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:paddingRight="6dp"
+            android:autoLink="web"
+            android:text="gff hds sdhfds fsdfjsdfgjfbsdjbf"
+            style="@style/chat_text_message_style"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/outgoing_layout_bubble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="10dp"
+        android:paddingEnd="5dp">
+
+        <TextView
+            android:id="@+id/textview_time"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="0dp"
+            android:textColor="@android:color/black"
+            android:layout_marginRight="4dp"
+            android:text="11:15 PM"
+            style="@style/chat_timings"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
